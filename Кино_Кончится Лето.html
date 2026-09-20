@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>КИНО — Кончится лето | Aesthetic Song Breakdown & Vocab</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Noto+Serif+SC:wght@400;600;700&family=Oswald:wght@400;600;700&family=Rubik+Mono+One&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #0a0a0a;
+            color: #e5e5e5;
+            font-family: 'Courier Prime', monospace;
+            background-image: 
+                radial-gradient(circle at 50% 50%, rgba(25, 25, 25, 0.9) 0%, rgba(5, 5, 5, 0.98) 100%),
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255, 255, 255, 0.015) 3px, transparent 3px);
+        }
+
+        .font-oswald { font-family: 'Oswald', sans-serif; }
+        .font-soviet { font-family: 'Rubik Mono One', sans-serif; }
+        .font-cn { font-family: 'Noto Serif SC', serif; }
+
+        .kino-card {
+            background-color: #121212;
+            border: 2px solid #282828;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.9), inset 0 0 20px rgba(255, 255, 255, 0.02);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .kino-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #dc2626 0%, #121212 50%, #dc2626 100%);
+        }
+
+        .noise-overlay {
+            background: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.05'/%3E%3C/svg%3E");
+        }
+
+        @media print {
+            body { background: #ffffff !important; color: #000000 !important; padding: 0 !important; }
+            header, nav, footer, .no-print { display: none !important; }
+            .kino-card { display: block !important; page-break-after: always; border: 2px solid #000 !important; background: #fff !important; color: #000 !important; box-shadow: none !important; margin-bottom: 20px; }
+            .kino-card * { color: #000 !important; }
+            .text-red-500, .text-red-600, .text-red-400 { color: #cc0000 !important; }
+            .bg-neutral-950, .bg-neutral-900 { background-color: #f5f5f5 !important; border: 1px solid #ccc !important; }
+        }
+
+        ::-webkit-scrollbar { width: 6px; height: 6px; }
+        ::-webkit-scrollbar-track { background: #0d0d0d; }
+        ::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+        ::-webkit-scrollbar-thumb:hover { background: #dc2626; }
+    </style>
+</head>
+<body class="min-h-screen py-8 px-4 flex flex-col justify-between noise-overlay">
+
+    <header class="max-w-4xl mx-auto w-full text-center mb-8 border-b border-neutral-800 pb-6">
+        <div class="flex flex-wrap justify-between items-center gap-4 mb-4">
+            <span class="inline-block px-3 py-1 bg-red-950/80 text-red-400 text-xs font-bold tracking-widest uppercase border border-red-800">
+                Lily's China Arc 🇨🇳 • Aesthetic Song Breakdown
+            </span>
+            <button onclick="window.print()" class="no-print px-3 py-1 bg-neutral-800 hover:bg-red-700 text-white text-xs font-bold tracking-wider transition-all border border-neutral-700 flex items-center gap-1">
+                <span>🖨️</span> Сохранить в PDF
+            </button>
+        </div>
+        <h1 class="text-3xl md:text-5xl font-bold font-oswald tracking-wider uppercase text-neutral-100">
+            КИНО — КОНЧИТСЯ ЛЕТО
+        </h1>
+        <p class="text-neutral-400 text-sm mt-2 tracking-wide font-cn">
+            《夏日将尽》 • 三语分词解析 + 词汇库 (RU / EN / CN)
+        </p>
+    </header>
+
+    <main class="max-w-4xl mx-auto w-full flex-grow">
+        <div class="no-print flex justify-center gap-2 mb-6 flex-wrap text-xs uppercase tracking-wider">
+            <button onclick="showCard(1)" id="btn-1" class="px-4 py-2 bg-neutral-800 text-white font-bold border border-red-500 transition-all">
+                01. Обложка
+            </button>
+            <button onclick="showCard(2)" id="btn-2" class="px-4 py-2 bg-neutral-900 text-neutral-400 border border-neutral-800 hover:border-red-500 transition-all">
+                02. Куплет I
+            </button>
+            <button onclick="showCard(3)" id="btn-3" class="px-4 py-2 bg-neutral-900 text-neutral-400 border border-neutral-800 hover:border-red-500 transition-all">
+                03. Припев ★
+            </button>
+            <button onclick="showCard(4)" id="btn-4" class="px-4 py-2 bg-neutral-900 text-neutral-400 border border-neutral-800 hover:border-red-500 transition-all">
+                04. Куплет III
+            </button>
+            <button onclick="showCard(5)" id="btn-5" class="px-4 py-2 bg-neutral-900 text-neutral-400 border border-neutral-800 hover:border-red-500 transition-all">
+                05. Словарь 📚
+            </button>
+        </div>
+
+        <!-- CARDS CONTAINER -->
+        <div class="relative min-h-[520px]">
+
+            <!-- CARD 1: COVER WITH VICTOR TSOI & KINO BAND PHOTO -->
+            <div id="card-1" class="kino-card p-6 md:p-10 rounded-sm">
+                <div class="flex justify-between items-center text-xs text-neutral-500 border-b border-neutral-800 pb-4 mb-6">
+                    <span>SIDE A • STEREO</span>
+                    <span class="tracking-widest">1990 • ЧЁРНЫЙ АЛЬБОМ</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                    <!-- Text Info -->
+                    <div class="space-y-4">
+                        <div class="text-red-500 font-bold text-xs tracking-widest uppercase flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-red-600 animate-pulse"></span>
+                            ГРУППА КИНО • ВИКТОР ЦОЙ
+                        </div>
+                        <h2 class="text-4xl md:text-5xl font-oswald font-extrabold uppercase tracking-wide leading-none text-white">
+                            КОНЧИТСЯ<br><span class="text-red-600">ЛЕТО</span>
+                        </h2>
+                        <p class="text-xl font-cn text-neutral-300 border-l-2 border-red-600 pl-3 italic">
+                            《夏日将尽》
+                            xià rì jiāng jìn
+                        </p>
+                        <p class="text-xs text-neutral-400 leading-relaxed pt-2">
+                            Легендарный трек Виктора Цоя 1990 года. Трехъязычный эстетичный разбор русской тоски, ожидания и надежды с рифмованным английским переводом, китайским текстом и словарем.
+                        </p>
+                    </div>
+
+                    <!-- Viktor Tsoi & Kino Band Featured Portrait Photo Container -->
+                    <div class="bg-neutral-950 p-3 border border-neutral-800 text-center space-y-3 relative overflow-hidden group">
+                        <div class="relative w-full h-60 mx-auto rounded-sm border border-neutral-800 bg-neutral-900 flex items-center justify-center overflow-hidden shadow-2xl">
+                            <!-- Viktor Tsoi Portrait Photo from Last.fm -->
+                            <img src="https://lastfm.freetls.fastly.net/i/u/ar0/70168b6b31a3d65c8f7edc62726244ac.jpg" 
+                                 alt="Виктор Цой — Группа Кино" 
+                                 class="w-full h-full object-cover grayscale contrast-125 brightness-90 group-hover:scale-105 transition-transform duration-700"
+                                 onerror="this.src='https://placehold.co/600x400/111111/e5e5e5?text=VIKTOR+TSOI'">
+                            
+                            <!-- Atmospheric Vignette Overlay -->
+                            <div class="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80"></div>
+                            
+                            <div class="absolute bottom-2 left-2 px-2 py-1 bg-black/80 text-[10px] text-red-400 border border-red-900/50 font-mono tracking-widest uppercase">
+                                ВИКТОР ЦОЙ • КИНО 1990
+                            </div>
+                        </div>
+
+                        <div class="text-xs text-neutral-400 font-mono flex justify-between px-1">
+                            <span class="text-neutral-200 font-bold tracking-wider">КИНО (1962–1991)</span>
+                            <span class="text-red-400">01. Кончится лето (5:55)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-8 pt-4 border-t border-neutral-800 flex justify-between items-center text-[11px] text-neutral-500 font-mono">
+                    <span>LILY'S CHINA ARC</span>
+                    <span>ПОСТПАНК / СССР 1990</span>
+                </div>
+            </div>
+
+            <div id="card-2" class="kino-card p-6 md:p-8 rounded-sm hidden">
+                <div class="flex justify-between items-center text-xs text-neutral-500 border-b border-neutral-800 pb-3 mb-6">
+                    <span class="text-red-500 font-bold">01 // УСТАЛОСТЬ И ВЫБОР</span>
+                    <span>КУПЛЕТ I</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-neutral-950 p-4 border border-neutral-800">
+                        <div class="text-xs text-red-400 font-bold uppercase mb-3 flex items-center gap-1 border-b border-neutral-900 pb-2">
+                            <span>🇷🇺</span> РУССКИЙ (ОРИГИНАЛ)
+                        </div>
+                        <p class="text-xs md:text-sm text-neutral-200 leading-relaxed font-sans whitespace-pre-line">
+Я выключаю телевизор,
+Я пишу тебе письмо
+Про то, что больше не могу
+Смотреть на дерьмо.
+Про то, что телефон звонил,
+Хотел, чтоб я встал,
+Оделся и пошел,
+А точнее — побежал.
+Но только я его послал,
+Сказал, что болен и устал...
+                        </p>
+                    </div>
+
+                    <div class="bg-neutral-950 p-4 border border-neutral-800">
+                        <div class="text-xs text-blue-400 font-bold uppercase mb-3 flex items-center gap-1 border-b border-neutral-900 pb-2">
+                            <span>🇬🇧</span> ENGLISH (RHYMED)
+                        </div>
+                        <p class="text-xs md:text-sm text-neutral-300 leading-relaxed italic whitespace-pre-line">
+I turn the TV off at last,
+And write a letter to you fast,
+About how I can't take no more
+The filth and trash outside my door.
+The phone kept ringing through the night,
+It wanted me to rise and fight,
+To dress up quick and run away,
+But I just swore and chose to stay,
+Said I was sick, worn out and sore...
+                        </p>
+                    </div>
+
+                    <div class="bg-neutral-950 p-4 border border-neutral-800">
+                        <div class="text-xs text-emerald-400 font-bold uppercase mb-3 flex items-center gap-1 border-b border-neutral-900 pb-2">
+                            <span>🇨🇳</span> 中文 (CHINESE)
+                        </div>
+                        <p class="text-xs md:text-sm font-cn text-neutral-200 leading-relaxed whitespace-pre-line">
+我关掉电视，
+给你想写一封信，
+讲我再也无法忍受，
+这满眼的垃圾与糟心。
+电话响个不停，
+想让我起床、穿衣、奔跑，
+奔向外面的吵闹。
+可我只是把它骂倒，
+说我病了，太累了……
+wǒ guān diào diàn shì,
+gěi nǐ xiǎng xiě yī fēng xìn,
+jiǎng wǒ zài yě wú fǎ rěn shòu,
+zhè mǎn yǎn de lā jī yǔ zāo xīn.
+diàn huà xiǎng gè bù tíng,
+xiǎng ràng wǒ qǐ chuáng, chuān yī, bēn pǎo...
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="card-3" class="kino-card p-6 md:p-8 rounded-sm hidden">
+                <div class="flex justify-between items-center text-xs text-neutral-500 border-b border-neutral-800 pb-3 mb-6">
+                    <span class="text-red-500 font-bold">02 // КУЛЬТОВЫЙ ПРИПЕВ</span>
+                    <span class="bg-red-600 text-white px-2 py-0.5 text-[10px] font-bold uppercase">ГЛАВНЫЙ СМЫСЛ</span>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="text-center py-4 bg-neutral-950 border border-red-900/40">
+                        <p class="text-2xl md:text-3xl font-oswald font-bold tracking-wide uppercase text-white">
+                            « Я жду ответа, больше надежд нету.<br>
+                            <span class="text-red-500">Скоро кончится лето. Это. »</span>
+                        </p>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div class="bg-neutral-950 p-5 border border-neutral-800">
+                            <div class="text-xs text-blue-400 font-bold uppercase mb-2">🇬🇧 English Translation (Rhymed)</div>
+                            <p class="text-base md:text-lg text-neutral-200 italic font-serif">
+                                "I wait for news,<br>
+                                With nothing left to lose.<br>
+                                Summer's ending soon,<br>
+                                Under this gray moon."
+                            </p>
+                        </div>
+
+                        <div class="bg-neutral-950 p-5 border border-neutral-800">
+                            <div class="text-xs text-emerald-400 font-bold uppercase mb-2">🇨🇳 Chinese Translation</div>
+                            <p class="text-lg md:text-xl font-cn text-neutral-100">
+                                我在等待回答，<br>
+                                心中再无依榻。<br>
+                                <span class="text-emerald-400 font-bold">夏日将尽，凉秋将至。</span>
+                            </p>
+                            <p class="text-xs text-neutral-400 font-mono mt-2">
+                                Wǒ zài děngdài huídá, xīnzhōng zài wú yī tà. Xiàrì jiāng jìn, liángqiū jiāng zhì.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="bg-neutral-900/60 p-4 border-l-2 border-red-500 text-xs space-y-2 text-neutral-300">
+                        <div class="font-bold text-red-400 uppercase tracking-wider">💡 Лингвистический акцент:</div>
+                        <p>
+                            • <strong class="text-emerald-400 font-cn">无依榻 (wú yī tà)</strong> — поэтичная китайская метафора «не на что больше опереться душой».
+                        </p>
+                        <p>
+                            • <strong class="text-emerald-400 font-cn">夏日将尽 (Xiàrì jiāng jìn)</strong> — изящное выражение «Лето подходит к концу» (тоска <em>悲秋 bēiqiū</em>).
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="card-4" class="kino-card p-6 md:p-8 rounded-sm hidden">
+                <div class="flex justify-between items-center text-xs text-neutral-500 border-b border-neutral-800 pb-3 mb-6">
+                    <span class="text-red-500 font-bold">03 // БЫТ И ХРУПКАЯ НАДЕЖДА</span>
+                    <span>КУПЛЕТ III</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="bg-neutral-950 p-4 border border-neutral-800">
+                        <div class="text-xs text-red-400 font-bold uppercase mb-3 flex items-center gap-1 border-b border-neutral-900 pb-2">
+                            <span>🇷🇺</span> РУССКИЙ
+                        </div>
+                        <p class="text-xs md:text-sm text-neutral-200 leading-relaxed font-sans whitespace-pre-line">
+И так идут за годом год,
+Так и жизнь пройдёт.
+И в сотый раз маслом вниз
+Упадёт бутерброд.
+Но, может, будет хоть день,
+Может, будет хоть час,
+Когда нам повезёт...
+                        </p>
+                    </div>
+
+                    <div class="bg-neutral-950 p-4 border border-neutral-800">
+                        <div class="text-xs text-blue-400 font-bold uppercase mb-3 flex items-center gap-1 border-b border-neutral-900 pb-2">
+                            <span>🇬🇧</span> ENGLISH
+                        </div>
+                        <p class="text-xs md:text-sm text-neutral-300 leading-relaxed italic whitespace-pre-line">
+And so the years keep rolling by,
+As life slips past without a sigh.
+The bread will fall face down again,
+Buttered side first in endless rain.
+But maybe there will come a day,
+Or maybe just an hour away,
+When luck will smile on us at last...
+                        </p>
+                    </div>
+
+                    <div class="bg-neutral-950 p-4 border border-neutral-800">
+                        <div class="text-xs text-emerald-400 font-bold uppercase mb-3 flex items-center gap-1 border-b border-neutral-900 pb-2">
+                            <span>🇨🇳</span> 中文
+                        </div>
+                        <p class="text-xs md:text-sm font-cn text-neutral-200 leading-relaxed whitespace-pre-line">
+年复一年，时光流逝，
+一辈子也许就此过完。
+第百次掉落的黄油面包，
+依然是抹酱的那一面向下。
+但也许会有那么一天，
+哪怕只是短短的一小时，
+幸运终将降临在我们身上……
+nián fù yī nián, shí guāng liú shì...
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="card-5" class="kino-card p-6 md:p-8 rounded-sm hidden">
+                <div class="flex justify-between items-center text-xs text-neutral-500 border-b border-neutral-800 pb-3 mb-6">
+                    <span class="text-amber-400 font-bold">📚 ПОЛЕЗНЫЕ ЛИНГВИСТИЧЕСКИЕ ЖЕМЧУЖИНЫ</span>
+                    <span>SLANG & VOCAB</span>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                    <div class="bg-neutral-950 p-4 border border-neutral-800 space-y-1">
+                        <div class="flex items-center justify-between">
+                            <span class="text-emerald-400 font-bold font-cn text-base">糟心 <span class="text-xs font-mono text-neutral-400">(zāoxīn)</span></span>
+                            <span class="text-[10px] bg-emerald-950 text-emerald-300 px-2 py-0.5 rounded border border-emerald-800">Китайский сленг</span>
+                        </div>
+                        <p class="text-xs text-neutral-300 pt-1">
+                            Супер-житейское слово из первого куплета: <em>«досадно, мерзко, на душе скребут кошки»</em>. Идеально для описания будней после воскресного <strong>tiáoxiū</strong>!
+                        </p>
+                    </div>
+
+                    <div class="bg-neutral-950 p-4 border border-neutral-800 space-y-1">
+                        <div class="flex items-center justify-between">
+                            <span class="text-emerald-400 font-bold font-cn text-base">无依榻 <span class="text-xs font-mono text-neutral-400">(wú yī tà)</span></span>
+                            <span class="text-[10px] bg-emerald-950 text-emerald-300 px-2 py-0.5 rounded border border-emerald-800">Поэтика</span>
+                        </div>
+                        <p class="text-xs text-neutral-300 pt-1">
+                            Поэтичная метафора из припева: дословно <em>«нет кушетки, на которую можно опереться»</em>, то есть полное ощущение того, что душой больше не за что зацепиться.
+                        </p>
+                    </div>
+
+                    <div class="bg-neutral-950 p-4 border border-neutral-800 space-y-1">
+                        <div class="flex items-center justify-between">
+                            <span class="text-emerald-400 font-bold font-cn text-base">夏日将尽 <span class="text-xs font-mono text-neutral-400">(xiàrì jiāng jìn)</span></span>
+                            <span class="text-[10px] bg-emerald-950 text-emerald-300 px-2 py-0.5 rounded border border-emerald-800">Книжное</span>
+                        </div>
+                        <p class="text-xs text-neutral-300 pt-1">
+                            Литературное книжное <em>«лето подходит к концу / на исходе»</em>. Звучит очень атмосферно и глубоко.
+                        </p>
+                    </div>
+
+                    <div class="bg-neutral-950 p-4 border border-neutral-800 space-y-1">
+                        <div class="flex items-center justify-between">
+                            <span class="text-blue-400 font-bold text-base">Worn out and sore</span>
+                            <span class="text-[10px] bg-blue-950 text-blue-300 px-2 py-0.5 rounded border border-blue-800">Английский</span>
+                        </div>
+                        <p class="text-xs text-neutral-300 pt-1">
+                            Британское выражение: не просто «устал», а <em>«вымотанный, изнуренный и разбитый»</em>.
+                        </p>
+                    </div>
+
+                    <div class="bg-neutral-950 p-4 border border-neutral-800 space-y-1 md:col-span-2">
+                        <div class="flex items-center justify-between">
+                            <span class="text-blue-400 font-bold text-base">Buttered side first</span>
+                            <span class="text-[10px] bg-blue-950 text-blue-300 px-2 py-0.5 rounded border border-blue-800">Идиома</span>
+                        </div>
+                        <p class="text-xs text-neutral-300 pt-1">
+                            Тот самый знаменитый закон подлости, когда бутерброд падает <em>«маслом вниз»</em>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="max-w-4xl mx-auto w-full text-center mt-8 pt-4 border-t border-neutral-800 text-xs text-neutral-500">
+        <p><strong>Lily's China Arc 🇨🇳</strong> • Виктор Цой (1962–1990)</p>
+    </footer>
+
+    <script>
+        function showCard(cardNumber) {
+            for (let i = 1; i <= 5; i++) {
+                const card = document.getElementById(`card-${i}`);
+                if (card) card.classList.add('hidden');
+                const btn = document.getElementById(`btn-${i}`);
+                if (btn) {
+                    btn.classList.remove('bg-neutral-800', 'text-white', 'border-red-500', 'border-amber-500');
+                    btn.classList.add('bg-neutral-900', 'text-neutral-400', 'border-neutral-800');
+                }
+            }
+
+            const activeCard = document.getElementById(`card-${cardNumber}`);
+            if (activeCard) activeCard.classList.remove('hidden');
+            const activeBtn = document.getElementById(`btn-${cardNumber}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-neutral-900', 'text-neutral-400', 'border-neutral-800');
+                activeBtn.classList.add('bg-neutral-800', 'text-white', cardNumber === 5 ? 'border-amber-500' : 'border-red-500');
+            }
+        }
+    </script>
+</body>
+</html>
